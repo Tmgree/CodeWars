@@ -1,39 +1,25 @@
 def proper_fractions(n)
-
-  not_reduced_fractions=[]
-  reduced_fractions=[]
-
-  for i in 1...n+1 do
-    not_reduced_fractions.push(i)
+  if n == 1
+    0
+  else
+    numerators = Array.new(n) {|i| i+1 }
+    proper_fractions = numerators.select { |i| GCD(i,n) == 1 }
+    proper_fractions.length
   end
-
-  not_reduced_fractions
-
 end
 
 
-#ICIF the answer will just be the prime factors multiples less than n
 
-def prime_factors_of_n(n)
+def GCD(m,n)
 
-  prime_factors = []
+  r = nil
 
-  for i in 1...n do
-    if n % i == 0
-      prime_factors.push(i)
-    end
+  while n != 0
+    r = m % n
+    m = n
+    n = r
   end
 
-  prime_factors
-
-end
-
-def factors_less_than_n(prime_factors)
-
-  factors=[]
-
-  for i in prime_factors[i] do
-    
-  end
+  m
 
 end
