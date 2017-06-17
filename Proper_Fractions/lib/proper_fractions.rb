@@ -1,14 +1,17 @@
+require 'prime'
+
 def proper_fractions(n)
-  if n == 1
-    0
-  else
-    numerators = Array.new(n) {|i| i+1 }
-    proper_fractions = numerators.select { |i| GCD(i,n) == 1 }
-    proper_fractions.length
-  end
+  prime_factorization(n).map{ |x| 1-(1/x) }
 end
 
+def find_prime(n)
+  Prime.take(n).last
+end
 
+def prime_factorization(n)
+  x = Prime.prime_division(n).flat_map { |factor, power| [factor] * power }
+  x.uniq
+end
 
 def GCD(m,n)
 
@@ -19,7 +22,5 @@ def GCD(m,n)
     m = n
     n = r
   end
-
-  m
 
 end
