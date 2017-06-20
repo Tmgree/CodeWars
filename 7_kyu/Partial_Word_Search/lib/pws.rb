@@ -15,3 +15,9 @@ def findWord(query, array_of_strings)
       return endarray
     end
 end
+
+def findWord(query, array_of_strings)
+ endarray = array_of_strings.select { |s| s.downcase.include?(query.downcase) }
+ return endarray unless endarray == []
+ return ["Empty"]
+end
