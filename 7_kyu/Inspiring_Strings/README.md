@@ -5,7 +5,7 @@ When given a string of space separated words, return the word with the longest l
 ## Example:
 
 ```
-red white blue' //=> 'white'
+longest_word('red white blue') //=> 'white'
 
-'red blue gold' //=> 'gold'
+longest_word('red blue gold') //=> 'gold'
 ```
