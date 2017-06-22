@@ -1,4 +1,4 @@
-# Difference between two collections
+# Difference Between Two Collections
 
 Find the difference between two collections. The difference means that either the character is present in one collection or it is present in other, but not in both. Return a sorted set with difference.
 
